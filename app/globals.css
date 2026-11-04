@@ -1,0 +1,73 @@
+:root {
+  --bg: #f7f3ec;
+  --surface: #ffffff;
+  --ink: #2b2420;
+  --muted: #6b6058;
+  --accent: #b5532a;
+  --accent-ink: #ffffff;
+  --line: #e2d9cc;
+  --warn: #fff4d6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+
+.preview-banner {
+  background: var(--warn);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+
+.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; margin: 0 0 8px; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 16px; }
+.lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 32px; }
+
+.offer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 0 0 32px;
+}
+.offer div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.offer dt { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); }
+.offer dd { margin: 4px 0 0; font-weight: 600; }
+
+.cta { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.cta-button {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cta-button:disabled { opacity: 0.6; cursor: not-allowed; }
+.cta-feedback { min-height: 1.5em; margin: 0; color: var(--muted); }
+
+.logbook h1 { margin-top: 0; }
+.logbook section { margin-top: 40px; }
+.note { color: var(--muted); }
+.warning { background: var(--warn); padding: 10px 14px; border-radius: 8px; }
+
+table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+thead th { background: var(--ink); color: var(--bg); font-weight: 600; }
+tr.difference { background: #f1ebe1; }
+code { font-size: 0.9em; }
+
+@media (max-width: 600px) {
+  table { display: block; overflow-x: auto; }
+}
